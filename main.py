@@ -5,24 +5,23 @@
 import random
 
 
-def tri():
-    int_list = [13, 15, 12, 17, 15, 30, 17, 28, 30, 28]
-    string_list = ["Fifi", "Riri", "Loulou", "Zoubi", "Zouba"]
-    list_length = len(int_list) + len(string_list)
+def main():
+    l1 = [13, 15, 12, 17, 15]
+    l2 = [12, 13, 20, 17, 14, 18]
+    list_length = len(l1) + len(l2)
     result_list = []
     i = 0
 
     while i < list_length:
-        if i < len(int_list):
-            result_list.append(int_list[i])
-        if i < len(string_list):
-            result_list.append(string_list[i])
-        i += 1
-    return result_list
+        if i < len(l1) and not result_list.count(l1[i]):
+            result_list.append(l1[i])
 
+        if i < len(l2) and not result_list.count(l2[i]):
+            result_list.append(l2[i])
 
-def main():
-    print(tri())
+        i = i + 1
+
+    print(result_list)
 
 
 if __name__ == '__main__':
